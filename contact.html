@@ -60,8 +60,8 @@
 
             <form>
               <div class="form-group">
-                <label >Name</label>
-                <input type="text" class="form-control" required = "required">
+                <label id ="check1" >Name</label>
+                <input type="text" name="firstname" class="form-control" required = "required" onkeydown="validation(this.value);">
               </div>
 
               <div class="form-group">
@@ -84,6 +84,23 @@
                     x.style.color = "green"
                 }
             }
+			
+			var v = /^[a-zA-Z]+ [a-zA-Z]+$/;
+            var y = document.getElementById("check1");
+            function validation(firstname){
+            if(!v.test(firstname))
+                {
+                    y.innerHTML	= "Please enter a valid Name";
+                    y.style.color = "red"
+                }
+            else
+                {
+                    y.innerHTML	= "Looks good!";
+                    y.style.color = "green"
+                }
+            }
+			
+			 
 			
         </script>
 
